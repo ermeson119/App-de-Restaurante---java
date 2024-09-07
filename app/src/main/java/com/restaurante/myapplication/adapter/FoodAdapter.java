@@ -33,12 +33,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
-        holder.binding.imgFood.setBackgroundResource(foodList.get(position).getImgFood());
-        holder.binding.textFoodNome.setText(foodList.get(position).getImgFood());
-        holder.binding.textFoodDescricao.setText(foodList.get(position).getImgFood());
-        holder.binding.textFoodPreco.setText(foodList.get(position).getImgFood());
-
+        Food currentFood = foodList.get(position);
+        holder.binding.imgFood.setBackgroundResource(currentFood.getImgFood()); // Defina a imagem corretamente
+        holder.binding.textFoodNome.setText(currentFood.getFoodNome()); // Use o getter para o nome
+        holder.binding.textFoodDescricao.setText(currentFood.getFoodDescricao()); // Use o getter para a descrição
+        holder.binding.textFoodPreco.setText(currentFood.getFoodPreco()); // Use o getter para o preço
     }
+
 
     @Override
     public int getItemCount() {
